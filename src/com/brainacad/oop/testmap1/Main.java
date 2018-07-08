@@ -10,8 +10,12 @@ public class Main {
     translator.addNewWord("mouse","мышь");
     translator.addNewWord("rat","крыса");
     Scanner scanner = new Scanner(System.in);
-    String en = scanner.next();
-
-    System.out.println(translator.translate(en));
+    String line = scanner.nextLine();
+    String[] en = line.split(" ");
+    for (int i = 0; i < en.length; i++) {
+      String s = en[i];
+      System.out.print(translator.translate(s)+" ");
+    }
+    scanner.close();
   }
 }
